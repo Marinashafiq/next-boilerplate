@@ -1,20 +1,14 @@
-import { i18n, Link, withTranslation } from "../i18n";
+import { Link, withTranslation } from "../i18n";
+import Navbar from "../components/navbar";
 
 const Homepage = ({ t }) => (
   <>
-    <main>
+  <Navbar />
+    <main className="d-flex justify-content-center align-items-center py-5">
       <div>
         <h1>{t("hello")}</h1>
-        <button
-          type="button"
-          onClick={() =>
-            i18n.changeLanguage(i18n.language === "en" ? "ar" : "en")
-          }
-        >
-          {t("change-locale")}
-        </button>
         <Link href="/second-page">
-          <button type="button">{t("hello")}</button>
+          <button className="btn btn-primary mx-3" type="button">{t("hello")}</button>
         </Link>
       </div>
     </main>
