@@ -1,0 +1,7 @@
+{
+  "hello": "hello",
+  "controls": {
+    "name": "name",
+    "age": "age"
+  }
+}
