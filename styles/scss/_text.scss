@@ -1,0 +1,36 @@
+html {
+  font-size: 14px;
+  @include media-breakpoint-down(xl) {
+    font-size: 14px;
+  }
+  @include media-breakpoint-down(md) {
+    font-size: 12px;
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: 10px;
+  }
+}
+
+@each $fontFamily in $fontFamilies {
+  @each $fontExtention in $fontExtentions {
+    @font-face {
+      font-family: #{$fontFamily};
+      src: url("../../public/assets/fonts/english/#{$fontFamily}.#{$fontExtention}");
+    }
+    .#{$fontFamily} {
+      font-family: #{$fontFamily};
+    }
+  }
+}
+
+@each $fontFamily in $ArabicFontFamilies {
+  @each $fontExtention in $fontExtentions {
+    @font-face {
+      font-family: #{$fontFamily};
+      src: url("../../public/assets/fonts/arabic/#{$fontFamily}.#{$fontExtention}");
+    }
+    .#{$fontFamily} {
+      font-family: #{$fontFamily};
+    }
+  }
+}

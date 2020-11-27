@@ -9,11 +9,13 @@ import { useRouter } from "next/router";
 function Theme({ children }) {
   const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
   const router = useRouter();
-  const lang = router.query.lang;
+  const lang = router.asPath.split('/')[1];
 
   useEffect(() => {
-    setDirection(lang === "en" ? "ltr" : "rtl");
-    document.body.style.direction = lang === "en" ? "ltr" : "rtl";
+    console.log(router)
+    console.log(lang)
+    document.body.dir = lang === "en" ? "ltr" : "rtl";
+    document.body.classList = lang === "en" ? "ltr" : "rtl";
   }, [lang]);
 
   const theme = createMuiTheme({
@@ -28,7 +30,8 @@ function Theme({ children }) {
     },
     typography: {
       fontFamily: [
-        "Montserrat-Regular",
+        "Nunito-Regular",
+        "Almarai-Regular",
         "-apple-system",
         "BlinkMacSystemFont",
         '"Segoe UI"',
