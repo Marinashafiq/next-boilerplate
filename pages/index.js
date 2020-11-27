@@ -6,7 +6,7 @@ const Homepage = ({ t }) => (
   <>
     <main className="d-flex justify-content-center align-items-center py-5">
       <div className="text-center">
-        <img className="welcome_image" src="https://hips.hearstapps.com/digitalspyuk.cdnds.net/16/45/1478516949-testify.gif"/>
+        <img className="image" src="https://hips.hearstapps.com/digitalspyuk.cdnds.net/16/45/1478516949-testify.gif"/>
         <h1 className="my-5">{t("welcomeContent")}</h1>
         <ButtonComponent
           content={t("login.loginTitle")}
