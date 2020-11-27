@@ -12,11 +12,9 @@
     align-items: center;
     justify-content: flex-start;
   }
-  .logo_img {
-    height: 5em;
-  }
   .logo_title {
     font-size: 1.5rem;
+    cursor: pointer;
   }
   .main {
     h3 {
@@ -25,5 +23,11 @@
     p {
       font-size: 1.7rem;
     }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .auth_container {
+    display: none !important;
   }
 }

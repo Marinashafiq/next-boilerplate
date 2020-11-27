@@ -1,5 +1,7 @@
 {
   "hello": "Welcome",
+  "language":"عربى",
+  "welcomeContent": "Welcome to next.js boilerplate",
   "login": {
     "loginTitle" : "Login"
   },

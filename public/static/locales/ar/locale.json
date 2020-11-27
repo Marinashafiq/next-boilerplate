@@ -1,5 +1,7 @@
 {
   "hello": "مرحبا",
+  "language":"en",
+  "welcomeContent": "مرحبا بك فى Next.js Boilerplate",
   "login": {
     "loginTitle" : "تسجيل الدخول"
   },

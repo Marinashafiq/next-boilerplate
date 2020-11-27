@@ -1,6 +1,7 @@
+import { withTranslation } from "next-i18next";
 import { i18n } from "../../i18n";
 
-const LanguageSwitcher = ({ color }) => {
+const LanguageSwitcher = ({ color, t }) => {
   return (
     <button
       type="button"
@@ -9,9 +10,9 @@ const LanguageSwitcher = ({ color }) => {
       }`}
       onClick={() => i18n.changeLanguage(i18n.language === "en" ? "ar" : "en")}
     >
-      {i18n.language === "en" ? "عربى" : "en"}
+      {t("language")}
     </button>
   );
 };
 
-export default LanguageSwitcher;
+export default withTranslation("locale")(LanguageSwitcher);
