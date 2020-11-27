@@ -1,7 +1,10 @@
 {
-  "hello": "hello",
+  "hello": "Welcome",
+  "login": {
+    "loginTitle" : "Login"
+  },
   "controls": {
-    "name": "name",
-    "age": "age"
+    "userName": "Username",
+    "password": "Password"
   }
 }

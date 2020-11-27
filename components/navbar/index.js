@@ -12,7 +12,7 @@ export default function Navbar() {
           <Typography variant="h6">
             Next Boilerplate
           </Typography>
-          <LanguageSwitcher />
+          <LanguageSwitcher color="text-white"/>
         </Toolbar>
       </AppBar>
   );

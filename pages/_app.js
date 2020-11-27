@@ -6,7 +6,7 @@ import Theme from "../theme";
 
 const MyApp = ({ Component, pageProps }) => (
   <Theme>
-     <Navbar />
+     {/* <Navbar /> */}
     <Component {...pageProps} />
   </Theme>
 );

@@ -9,11 +9,9 @@ import { useRouter } from "next/router";
 function Theme({ children }) {
   const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
   const router = useRouter();
-  const lang = router.asPath.split('/')[1];
+  const lang = router.asPath.split("/")[1];
 
   useEffect(() => {
-    console.log(router)
-    console.log(lang)
     document.body.dir = lang === "en" ? "ltr" : "rtl";
     document.body.classList = lang === "en" ? "ltr" : "rtl";
   }, [lang]);
@@ -22,10 +20,10 @@ function Theme({ children }) {
     direction: lang === "en" ? "ltr" : "rtl",
     palette: {
       primary: {
-        main: "rgba(134, 54, 78, 1)",
+        main: "#465a9c",
       },
       secondary: {
-        main: "rgba(234, 134, 133, 1)",
+        main: "#d35d6e",
       },
     },
     typography: {
@@ -43,7 +41,14 @@ function Theme({ children }) {
         '"Segoe UI Emoji"',
         '"Segoe UI Symbol"',
       ].join(","),
+      button: {
+        fontSize: "1rem",
+        fontWeight: 400,
+        fontFamily: lang === "en" ? "Nunito-Bold" : "Almarai-Bold",
+        textTransform: "capitalize",
+      },
     },
+    button: {},
   });
 
   return (

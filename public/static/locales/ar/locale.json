@@ -1,7 +1,10 @@
 {
-  "hello": "مرحبا بكم",
+  "hello": "مرحبا",
+  "login": {
+    "loginTitle" : "تسجيل الدخول"
+  },
   "controls": {
-    "name": "الاسم",
-    "age":"السن"
+    "userName": "اسم المستخدم",
+    "password": "كلمة المرور"
   }
 }
