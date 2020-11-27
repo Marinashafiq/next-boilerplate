@@ -12,3 +12,17 @@ export function receiveProducts(payload) {
     payload,
   };
 }
+
+export function requestProductDetails(payload) {
+  return {
+    type: types.PRODUCT_DETAILS_REQUEST,
+    payload
+  };
+}
+
+export function receiveProductDetails(payload) {
+  return {
+    type: types.PRODUCT_DETAILS_RECEIVE,
+    payload,
+  };
+}

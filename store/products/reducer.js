@@ -7,6 +7,11 @@ export default function products(state = {}, action) {
         ...state,
         ...action.payload,
       };
+    case types.PRODUCT_DETAILS_RECEIVE:
+      return {
+        ...state,
+        ...action.payload,
+      };
     default:
       return state;
   }

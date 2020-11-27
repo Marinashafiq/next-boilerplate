@@ -12,6 +12,11 @@ const Homepage = ({ t }) => (
           content={t("login.loginTitle")}
           handleClick={() => Router.push("/auth/login")}
         />
+        <ButtonComponent
+          content={"Products"}
+          handleClick={() => Router.push("/products")}
+          classes="mx-4"
+        />
       </div>
     </main>
   </>
