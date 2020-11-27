@@ -1,7 +1,12 @@
 {
-  "hello": "مرحبا بكم",
+  "hello": "مرحبا",
+  "language":"en",
+  "welcomeContent": "مرحبا بك فى Next.js Boilerplate",
+  "login": {
+    "loginTitle" : "تسجيل الدخول"
+  },
   "controls": {
-    "name": "الاسم",
-    "age":"السن"
+    "userName": "اسم المستخدم",
+    "password": "كلمة المرور"
   }
 }

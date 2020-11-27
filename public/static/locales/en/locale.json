@@ -1,7 +1,12 @@
 {
-  "hello": "hello",
+  "hello": "Welcome",
+  "language":"عربى",
+  "welcomeContent": "Welcome to next.js boilerplate",
+  "login": {
+    "loginTitle" : "Login"
+  },
   "controls": {
-    "name": "name",
-    "age": "age"
+    "userName": "Username",
+    "password": "Password"
   }
 }
