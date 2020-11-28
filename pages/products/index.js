@@ -1,5 +1,5 @@
+import Head from "next/head";
 import React, { useEffect } from "react";
-import { withTranslation } from "../../i18n";
 import MainLayout from "../../components/layouts/mainLayout";
 import ProductCard from "../../components/productCard";
 import { useDispatch, useSelector } from "react-redux";
@@ -40,10 +40,6 @@ const Products = () => {
   );
 };
 
-Products.getInitialProps = async () => ({
-  namespacesRequired: ["locale"],
-});
-
 Products.Layout = MainLayout;
 
-export default withTranslation("locale")(Products);
+export default Products;
