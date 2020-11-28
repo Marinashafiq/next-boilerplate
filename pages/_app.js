@@ -1,4 +1,3 @@
-import Head from "next/head";
 import App from "next/app";
 import { useRouter } from "next/router";
 import { appWithTranslation } from "../i18n";
@@ -6,6 +5,7 @@ import { Provider } from "react-redux";
 import store from "../store";
 import Theme from "../theme";
 import { Loader } from "../components/loader";
+import { MaterialSnackbar } from "../components/snackbar";
 import "../styles/globals.scss";
 
 const MyApp = ({ Component, pageProps }) => {
@@ -20,6 +20,7 @@ const MyApp = ({ Component, pageProps }) => {
     <Provider store={store}>
       <Theme>
         <Layout>
+          <MaterialSnackbar/>
           {store.getState().isLoading ? (
             <Loader />
           ) : (

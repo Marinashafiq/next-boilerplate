@@ -2,11 +2,13 @@ import { call, put, takeLatest } from "redux-saga/effects";
 import * as TYPES from "./types";
 import * as ACTIONS from "./actions";
 import * as API from "./api";
+import { dispatchSnackbarSuccess } from "../../utlis/shared";
 
 function* getAllProducts() {
   try {
     const response = yield call(API.getProducts);
     yield put(ACTIONS.receiveProducts(response.data));
+    // dispatchSnackbarSuccess("hello")
   } catch (error) {
     console.log(error);
   }

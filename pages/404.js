@@ -3,11 +3,10 @@ import NoLayout from "../components/layouts/noLayout";
 import i18n, { useTranslation } from "../i18n";
 
 function Custom404() {
-  // const { i18n : { language , t }} = i18n;
   const {
     i18n: { language },
     t,
-  } = useTranslation();
+  } = useTranslation(["locale"]);
   return (
     <div className="d-flex justify-content-center align-items-center text-center full-height">
       <div>
