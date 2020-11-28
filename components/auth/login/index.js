@@ -8,9 +8,9 @@ function LoginForm({ t }) {
   const schema = yup.object().shape({
     email: yup
       .string()
-      .required(t("errors.required"))
-      .email(t("errors.invalidEmail")),
-    password: yup.string().required(t("errors.required")),
+      .required("errors.required")
+      .email("errors.invalidEmail"),
+    password: yup.string().required("errors.required"),
   });
   return (
     <div className="w-75 mx-auto">
@@ -46,7 +46,7 @@ function LoginForm({ t }) {
                 value={values.email}
               />
               <small className="text-danger">
-                {errors.email && touched.email && errors.email}
+                {errors.email && touched.email && t(errors.email)}
               </small>
             </div>
             <div className="form-group">
@@ -64,7 +64,7 @@ function LoginForm({ t }) {
               />
               <small className="text-danger">
                 {" "}
-                {errors.password && touched.password && errors.password}
+                {errors.password && touched.password && t(errors.password)}
               </small>
             </div>
             <div className="d-flex justify-content-end">
