@@ -2,6 +2,8 @@
   "hello": "مرحبا",
   "language":"en",
   "welcomeContent": "مرحبا بك فى Next.js Boilerplate",
+  "oops":"للأسف ..",
+  "notFoundPage":"هذه الصفحة غير موجودة",
   "login": {
     "loginTitle" : "تسجيل الدخول"
   },
