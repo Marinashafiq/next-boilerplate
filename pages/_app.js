@@ -5,6 +5,7 @@ import { appWithTranslation } from "../i18n";
 import { Provider } from "react-redux";
 import store from "../store";
 import Theme from "../theme";
+import { Loader } from "../components/loader";
 import "../styles/globals.scss";
 
 const MyApp = ({ Component, pageProps }) => {
@@ -28,7 +29,11 @@ const MyApp = ({ Component, pageProps }) => {
       <Provider store={store}>
         <Theme>
           <Layout>
-            <Component {...pageProps} />
+            {store.getState().isLoading ? (
+              <Loader />
+            ) : (
+              <Component {...pageProps} />
+            )}
           </Layout>
         </Theme>
       </Provider>

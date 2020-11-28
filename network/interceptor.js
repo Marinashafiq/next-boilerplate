@@ -1,3 +1,6 @@
+import store from "../store";
+import { setLoader } from "../store/loader/actions";
+
 export const isHandlerEnabled = (config = {}) => {
   return config.hasOwnProperty("handlerEnabled") && !config.handlerEnabled
     ? false
@@ -6,21 +9,22 @@ export const isHandlerEnabled = (config = {}) => {
 
 export const requestHandler = (request) => {
   if (isHandlerEnabled(request)) {
-    document.body.classList.add("loading-indicator");
+    store.dispatch(setLoader(true));
   }
   return request;
 };
 
 export const successHandler = (response) => {
   if (isHandlerEnabled(response)) {
-    document.body.classList.remove("loading-indicator");
+    store.dispatch(setLoader(false));
+
   }
   return response;
 };
 
 export const errorHandler = (error) => {
   if (isHandlerEnabled(error.config)) {
-    document.body.classList.remove("loading-indicator");
+    store.dispatch(setLoader(false));
   }
   return Promise.reject({ ...error });
 };

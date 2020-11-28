@@ -2,7 +2,7 @@ import * as types from "./types";
 
 export function setLoader(payload) {
   return {
-    type: types.SET_LANGUAGE,
+    type: types.SET_LOADER,
     payload,
   };
 }
