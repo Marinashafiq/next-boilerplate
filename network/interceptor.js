@@ -6,21 +6,21 @@ export const isHandlerEnabled = (config = {}) => {
 
 export const requestHandler = (request) => {
   if (isHandlerEnabled(request)) {
-    console.log(request);
+    document.body.classList.add("loading-indicator");
   }
   return request;
 };
 
 export const successHandler = (response) => {
   if (isHandlerEnabled(response)) {
-    console.log(response);
+    document.body.classList.remove("loading-indicator");
   }
   return response;
 };
 
 export const errorHandler = (error) => {
   if (isHandlerEnabled(error.config)) {
-    console.log(error);
+    document.body.classList.remove("loading-indicator");
   }
   return Promise.reject({ ...error });
 };

@@ -4,7 +4,7 @@ import ProductCard from "../../components/productCard";
 import { useDispatch, useSelector } from "react-redux";
 import { requestProducts } from "../../store/products/actions";
 
-const Products = () => {
+function Products () {
   const dispatch = useDispatch();
   const { products } = useSelector((state) => state);
 
@@ -24,7 +24,7 @@ const Products = () => {
 
   return (
     <div className="row container mx-auto my-5">
-      {products && renderProducts()}
+      {renderProducts()}
     </div>
   );
 };

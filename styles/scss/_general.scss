@@ -1,10 +1,37 @@
-body{
-    font-family: Nunito-Regular;
+body {
+  font-family: Nunito-Regular;
 
-    .bold_font {
-        font-family: Nunito-Bold;
-    }
-    .regular_font {
-        font-family: Nunito-Regular;
-    }
+  .bold_font {
+    font-family: Nunito-Bold;
+  }
+  .regular_font {
+    font-family: Nunito-Regular;
+  }
+
+  &.loading-indicator:before {
+    content: "";
+    background: #000000cc;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+  }
+
+  &.loading-indicator:after {
+    content: "\f1ce";
+    font-family: FontAwesome;
+    position: fixed;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    z-index: 999999;
+    color: white;
+    text-align: center;
+    font-weight: 100;
+    font-size: 4rem;
+    -webkit-animation: fa-spin 1s infinite linear;
+    animation: fa-spin 1s infinite linear;
+  }
 }
