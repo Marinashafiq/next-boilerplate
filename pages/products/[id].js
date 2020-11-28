@@ -1,20 +1,8 @@
-import React, { useEffect } from "react";
+import Head from "next/head";
 import MainLayout from "../../components/layouts/mainLayout";
 import ProductCard from "../../components/productCard";
-import { useDispatch, useSelector } from "react-redux";
-import { requestProductDetails } from "../../store/products/actions";
-import { useRouter } from "next/router";
-import Head from "next/head";
 
-const ProductDetails = () => {
-  const dispatch = useDispatch();
-  const router = useRouter();
-  const productDetails = useSelector((state) => state.products);
-
-  useEffect(() => {
-    dispatch(requestProductDetails(router.query.id));
-  }, []);
-
+const ProductDetails = ({productDetails}) => {
   return (
     <>
       <Head>
@@ -32,7 +20,12 @@ const ProductDetails = () => {
   );
 };
 
-
 ProductDetails.Layout = MainLayout;
+
+ProductDetails.getInitialProps = async ({query}) => {
+  const res = await fetch(`https://fakestoreapi.com/products/${query.id}`)
+  const json = await res.json()
+  return { productDetails : json }
+}
 
 export default ProductDetails;
