@@ -13,7 +13,7 @@ const Homepage = ({ t }) => (
           handleClick={() => Router.push("/auth/login")}
         />
         <ButtonComponent
-          content={"Products"}
+          content={t("products")}
           handleClick={() => Router.push("/products")}
           classes="mx-4"
         />
