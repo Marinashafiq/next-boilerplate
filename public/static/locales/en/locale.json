@@ -1,15 +1,19 @@
 {
   "hello": "Welcome",
-  "language":"عربى",
-  "oops":"OOPS..",
-"products":"Products",
+  "language": "عربى",
+  "oops": "OOPS..",
+  "products": "Products",
   "welcomeContent": "Welcome to next.js boilerplate",
-  "notFoundPage" : "Page not found",
+  "notFoundPage": "Page not found",
   "login": {
-    "loginTitle" : "Login"
+    "loginTitle": "Login"
   },
   "controls": {
-    "userName": "Username",
+    "email": "Email",
     "password": "Password"
+  },
+  "errors": {
+    "required": "This field is required",
+    "invalidEmail":"Inavlid email format"
   }
 }

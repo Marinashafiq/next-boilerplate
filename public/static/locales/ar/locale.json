@@ -9,7 +9,11 @@
     "loginTitle" : "تسجيل الدخول"
   },
   "controls": {
-    "userName": "اسم المستخدم",
+    "email": "البريد الالكترونى",
     "password": "كلمة المرور"
+  },
+  "errors":{
+    "required" : "هذا الحقل مطلوب",
+    "invalidEmail":"البريد الالكترونى غير صحيح"
   }
 }
