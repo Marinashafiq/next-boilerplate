@@ -1,37 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { withTranslation } from "../../i18n";
 import MainLayout from "../../components/layouts/mainLayout";
 import ProductCard from "../../components/productCard";
-import { connect } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { requestProducts } from "../../store/products/actions";
 
-class Products extends React.Component {
-  componentDidMount() {
-    this.props.requestProducts();
-  }
+const Products = () => {
+  const dispatch = useDispatch();
+  const { products } = useSelector((state) => state);
+  
+  useEffect(() => {
+    dispatch(requestProducts());
+  }, []);
 
-  renderProducts = () => {
-    return this.props.products.map((products, index) => {
+  const renderProducts = () => {
+    return Object.values(products).map((products, index) => {
       return (
         <div className="col-md-3 mb-4 d-flex align-items-stretch" key={index}>
-          <ProductCard data={products} isClickable={true}/>
+          <ProductCard data={products} isClickable={true} />
         </div>
       );
     });
   };
 
-  render() {
-    return (
-        <div className="row container mx-auto my-5">
-            {this.props.products && this.renderProducts()}
-        </div>
-    )
-  }
-}
-
-const mapStateToProps = ({ products }) => ({
-  products : Object.values(products),
-});
+  return (
+    <div className="row container mx-auto my-5">
+      {products && renderProducts()}
+    </div>
+  );
+};
 
 Products.getInitialProps = async () => ({
   namespacesRequired: ["locale"],
@@ -39,6 +36,4 @@ Products.getInitialProps = async () => ({
 
 Products.Layout = MainLayout;
 
-export default connect(mapStateToProps, { requestProducts })(
-  withTranslation("locale")(Products)
-);
+export default withTranslation("locale")(Products);

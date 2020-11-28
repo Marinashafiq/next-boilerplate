@@ -1,30 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MainLayout from "../../components/layouts/mainLayout";
 import ProductCard from "../../components/productCard";
-import { connect } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { requestProductDetails } from "../../store/products/actions";
-import { withRouter } from "next/router";
+import { useRouter } from "next/router";
 
-class ProductDetails extends React.Component {
-  componentDidMount() {
-    this.props.requestProductDetails(1);
-  }
+const ProductDetails = () => {
+  const dispatch = useDispatch();
+  const router = useRouter();
+  const productDetails = useSelector((state) => state.products);
 
-  render() {
-    return (
-      <div className="w-50 my-5 mx-auto text-center">
-        <ProductCard data={this.props.productDetails} isClickable={false}/>
-      </div>
-    );
-  }
-}
+  useEffect(() => {
+    dispatch(requestProductDetails(router.query.id));
+  }, []);
 
-const mapStateToProps = ({ products }) => ({
-  productDetails: products,
-});
+  return (
+    <div className="w-50 my-5 mx-auto text-center">
+      <ProductCard data={productDetails} isClickable={false} />
+    </div>
+  );
+};
 
 ProductDetails.Layout = MainLayout;
 
-export default connect(mapStateToProps, { requestProductDetails })(
-    ProductDetails
-);
+export default ProductDetails;
