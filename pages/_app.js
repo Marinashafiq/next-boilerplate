@@ -17,27 +17,17 @@ const MyApp = ({ Component, pageProps }) => {
     router.push(`${lang}/auth/login`);
   }
   return (
-    <>
-      <Head>
-        <link
-          data-require="fontawesome@*"
-          data-semver="4.5.0"
-          rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css"
-        />
-      </Head>
-      <Provider store={store}>
-        <Theme>
-          <Layout>
-            {store.getState().isLoading ? (
-              <Loader />
-            ) : (
-              <Component {...pageProps} />
-            )}
-          </Layout>
-        </Theme>
-      </Provider>
-    </>
+    <Provider store={store}>
+      <Theme>
+        <Layout>
+          {store.getState().isLoading ? (
+            <Loader />
+          ) : (
+            <Component {...pageProps} />
+          )}
+        </Layout>
+      </Theme>
+    </Provider>
   );
 };
 
