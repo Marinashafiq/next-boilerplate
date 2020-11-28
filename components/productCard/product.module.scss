@@ -1,8 +1,13 @@
 .product_card {
-  cursor: pointer;
   .product_image {
     height: 15em;
     width: 15em;
     object-fit: contain;
+  }
+  &.notClickable {
+    cursor: auto;
+  }
+  &.clickable {
+    cursor: pointer;
   }
 }

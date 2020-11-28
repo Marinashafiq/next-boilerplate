@@ -2,6 +2,7 @@
   "hello": "Welcome",
   "language":"عربى",
   "oops":"OOPS..",
+"products":"Products",
   "welcomeContent": "Welcome to next.js boilerplate",
   "notFoundPage" : "Page not found",
   "login": {
