@@ -4,7 +4,7 @@ import reducers from './combineReducers';
 import rootSaga from './rootSaga'
 // ======== Compose redux dev tool with applyMiddleware ========
 const composeEnhancers =
-  typeof window === 'object' &&
+  typeof window === 'object' && process.env.NODE_ENV !== 'production' &&
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) :
     compose;// create the saga middleware
