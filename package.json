@@ -15,6 +15,7 @@
     "bootstrap": "^4.5.3",
     "formik": "^2.2.5",
     "jss-rtl": "^0.3.0",
+    "material-ui-confirm": "^2.1.1",
     "next": "10.0.3",
     "next-i18next": "^7.0.1",
     "react": "17.0.1",

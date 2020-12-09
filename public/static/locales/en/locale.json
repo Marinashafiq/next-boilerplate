@@ -15,5 +15,13 @@
   "errors": {
     "required": "This field is required",
     "invalidEmail":"Inavlid email format"
+  },
+  "confirm" : {
+    "confirmTitle" : "Are you sure?",
+    "confirmContent" : "Are you sure you want to leave this page"
+  },
+  "buttons" : {
+    "yes":"Yes",
+    "cancel" : "Cancel"
   }
 }

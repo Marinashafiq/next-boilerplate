@@ -15,5 +15,13 @@
   "errors":{
     "required" : "هذا الحقل مطلوب",
     "invalidEmail":"البريد الالكترونى غير صحيح"
+  },
+  "confirm" : {
+    "confirmTitle" : "هل انت متاكد؟",
+    "confirmContent" : "هل انت متاكد انك تريد مغادرة هذة الصفحة"
+  },
+  "buttons" : {
+    "yes":"نعم",
+    "cancel" : "الغاء"
   }
 }

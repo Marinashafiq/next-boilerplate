@@ -6,6 +6,7 @@ import store from "../store";
 import Theme from "../theme";
 import { Loader } from "../components/loader";
 import { MaterialSnackbar } from "../components/snackbar";
+import { ConfirmProvider } from "material-ui-confirm";
 import "../styles/globals.scss";
 
 const MyApp = ({ Component, pageProps }) => {
@@ -19,14 +20,16 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <Provider store={store}>
       <Theme>
-        <Layout>
-          <MaterialSnackbar/>
-          {store.getState().isLoading ? (
-            <Loader />
-          ) : (
-            <Component {...pageProps} />
-          )}
-        </Layout>
+        <ConfirmProvider>
+          <Layout>
+            <MaterialSnackbar />
+            {store.getState().isLoading ? (
+              <Loader />
+            ) : (
+              <Component {...pageProps} />
+            )}
+          </Layout>
+        </ConfirmProvider>
       </Theme>
     </Provider>
   );

@@ -6,8 +6,16 @@ const localeSubpaths = {
 };
 
 module.exports = {
-  rewrites: async () => nextI18NextRewrites(localeSubpaths),
   publicRuntimeConfig: {
     localeSubpaths,
+  },
+  async rewrites() {
+    return [
+      ...nextI18NextRewrites(localeSubpaths),
+      {
+        source: '/:lang(en|ar)?/:path*',
+        destination: '/:lang(en|ar)?/:path*', // Matched parameters can be used in the destination
+      },
+    ]
   },
 };
